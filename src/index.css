@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Montserrat, sans-serif;
+}
+
+/* Add this CSS to your stylesheet */
+.slick-dots {
+  position: absolute;
+  bottom: -4vh;
+  width: 100%;
+  text-align: center;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px; /* Adjust the spacing between dots as needed */
+}
+/* Hide the numbers inside the dots */
+.slick-dots li button:before {
+  display: none !important;
+}
+
+/* Increase the size of the dots */
+.slick-dots li button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  font-size: 0;
+  line-height: 12px;
+  background-color: lightslategray; /* Set the color for inactive dots */
+  opacity: 0.7; /* Adjust the opacity of the dots as needed */
+}
+
+/* Apply the color only to the active dot */
+.slick-dots li.slick-active button {
+  background-color: #ffc107; /* Apply color only to the active dot */
+  opacity: 1; /* Adjust the opacity of the active dot */
+}
+
+.circle {
+  border-color: #ffc107;
+}
+
+.Arrowcircle {
+  border: 2px solid #f4a210;
+  outline: 2px solid #f4a210;
+  outline-offset: 2px;
+  border-color: #ffc107;
+  height: 12rem;
+  width: 12rem;
+  border-radius: 100%;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.seo-icon-container {
+  animation: blink 1s infinite;
+}
+
+@media (min-width: 768px) {
+  .slick-dots {
+    bottom: -9vh; /* Position at 768px viewport width */
+  }
+  #clients .slick-list::before {
+    position: absolute;
+    content: "";
+    top: 20px;
+    right: 0;
+    bottom: -10px;
+    left: 50%;
+    z-index: -50;
+    border-radius: 60px;
+    background: rgba(255, 255, 255, 0.57);
+    transform: scaleY(0.9);
+    transform: translateX(-50%);
+    width: 90%;
+  }
+  #clients .slick-slide {
+    padding: 0 142px;
+  }
+  /* #clients {
+    padding: 40px 100px;
+  } */
+  .left-line::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0px;
+    width: 0;
+    height: 50%;
+    border-left: 1px solid #e1e1e1;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  .left-line:first-child::before {
+    content: "";
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .circle {
+    border: 2px solid #f4a210;
+    outline: 2px solid #f4a210;
+    outline-offset: 2px;
+    border-color: #ffc107;
+    height: 14rem;
+    width: 14rem;
+    border-radius: 100%;
+  }
+  /* .fakeSlider {
+    margin: 0 20vw 0 20vw;
+  } */
+  /* #clients .slick-list {
+    position: relative;
+    padding: 0 142px;
+  } */
+}
+#clients .slick-list {
+  position: relative;
+}
+.bottom-line::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 5px;
+}
+.bottom-line {
+  cursor: pointer;
+}
+
+/* .img-slider-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.img-slide {
+  display: none;
+  width: 50%;
+  height: auto;
+  transition: opacity 1s ease;
+}*/
+
+.img-slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.img-slide.inactive {
+  opacity: 0;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  z-index: 100;
+}
+
+.image-container {
+  scroll-behavior: smooth;
+}
+
+/* AboutComapny.jsx */
+.selectedTab {
+  border-bottom-color: #f4a210; /* Change to your desired color */
+  border-bottom-style: solid; /* Add this line */
+  border-bottom-width: 1px; /* Add this line */
+}
